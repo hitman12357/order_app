@@ -176,7 +176,6 @@ class OrderController extends AbstractController
             }
 
             $orders = $orderRepository->findBy($criteria);
-            //TODO Не выводит внутренности OrderItem
             return $this->json($orders, Response::HTTP_OK, [],
                 ['groups' => 'order','content-type' => 'application/json']);
 
