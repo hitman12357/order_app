@@ -1,0 +1,4 @@
+.idea
+project/var/cache/*
+project/var/log/*
+project/vendor
