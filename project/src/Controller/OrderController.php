@@ -204,7 +204,7 @@ class OrderController extends AbstractController
         try {
             $from = DateTime::createFromFormat('d.m.Y H:i:s', $request->query->get('from'));
             $to = DateTime::createFromFormat('d.m.Y H:i:s', $request->query->get('to'));
-            $orders = $orderDelayedRepository->findByOrderIdOrderStatus($from, $to);
+            $orders = $orderDelayedRepository->findByCurrentDate($from, $to);
             return $this->json($orders, Response::HTTP_OK, [],
                 ['groups' => ['order-delayed','order'],'content-type' => 'application/json']);
         } catch (Exception $exception) {

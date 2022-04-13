@@ -72,7 +72,7 @@ RUN pecl install xdebug \
 RUN touch /var/log/cron.log &&\
     touch /etc/cron.d/crontab &&\
     echo "PATH=/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin" >> /etc/cron.d/crontab &&\
-    echo "* * * * * root echo \"Hello world\" >> /var/log/cron.log 2>&1" >> /etc/cron.d/crontab &&\
+    echo "* * * * * root /var/www/html/bin/console app:delay-orders" >> /etc/cron.d/crontab &&\
     echo "# Don't remove the empty line at the end of this file. It is required to run the cron job" >> /etc/cron.d/crontab &&\
     crontab /etc/cron.d/crontab &&\
     crontab -

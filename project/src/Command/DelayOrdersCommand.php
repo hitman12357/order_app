@@ -55,8 +55,6 @@ class DelayOrdersCommand extends Command
                 $this->entityManager->persist($order);
             }
             $this->entityManager->flush();
-            $output->write("12312312");
-            $output->write(var_export($orders, true));
 
         } catch (Exception $exception) {
             $output->write($exception->getMessage());

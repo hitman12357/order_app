@@ -14,7 +14,7 @@ class OrderDelayedRepository extends ServiceEntityRepository
         parent::__construct($registry, OrderDelayed::class);
     }
 
-    public function findByOrderIdOrderStatus(DateTime $from, DateTime $to)
+    public function findByCurrentDate(DateTime $from, DateTime $to)
     {
         $qb = $this->createQueryBuilder('o');
         $qb
